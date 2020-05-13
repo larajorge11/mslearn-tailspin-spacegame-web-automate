@@ -79,9 +79,6 @@ stages:
     - script: |
         # Exit when any command returns a failure status.
         set -e
-        #Write main.tf
-        echo 'terraform -version'
-        echo 'provider "azurerm" {version = "=2.0.0" features {}}' | tee -a main.tf
         # Write terraform.tfvars.
         echo 'resource_group_location = "'$(ResourceGroupLocation)'"' | tee terraform.tfvars
         # Write backend.tfvars.
